@@ -13,16 +13,16 @@ build:
   entry_points:
     - pypinfo = pypinfo.cli:pypinfo
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.8
     - hatchling
     - pip
   run:
-    - python >=3.7
+    - python >=3.8
     - binary
     - click
     - google-cloud-bigquery-core >=2.11.0
